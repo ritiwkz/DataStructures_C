@@ -17,6 +17,22 @@ public:
     }
 };
 
+// Insertion after a given node
+
+void insertAfter(Node *prev_node, int val)
+{
+    if (prev_node == NULL)
+    {
+        cout << "The Given Node can't be NULL" << endl;
+    }
+
+    Node *new_node = new Node(val);
+
+    new_node->next = prev_node->next;
+
+    prev_node->next = new_node;
+}
+
 void insert(Node **head, int val)
 {
     Node *new_node = new Node(val);
@@ -38,7 +54,12 @@ void insert(Node **head, int val)
     temp->next = new_node;
 }
 
-void display(Node *n)
+void printNode(Node *n) // Print a specific Node.
+{
+    cout << n->data << endl;
+}
+
+void display(Node *n) // Display the whole Linked List.
 {
 
     while (n != NULL)
@@ -49,22 +70,21 @@ void display(Node *n)
     cout << "NULL";
 }
 
-void search(Node* head,int val)
-{   
+void search(Node *head, int val)
+{
     int count = 0;
-    while (head!=NULL)
+    while (head != NULL)
     {
-        if(head->data == val)
+        if (head->data == val)
         {
-            cout<<"The Element is Found at "<<count<<" index."<<endl;
+            cout << "The Element is Found at " << count << " index." << endl;
             return;
         }
-    head = head->next;
-    count++;
+        head = head->next;
+        count++;
     }
 
-    cout<<"Element Not Found"<<endl;
-    
+    cout << "Element Not Found" << endl;
 }
 
 int main()
@@ -77,31 +97,12 @@ int main()
     insert(&head, 40);
     insert(&head, 50);
     insert(&head, 60);
-    insert(&head, 70);
-    insert(&head, 80);
-    insert(&head, 90);
-    insert(&head, 136732);
-    insert(&head, 1343);
-    insert(&head, 10000);
-    insert(&head, 10043);
-    insert(&head, 34100);
-    insert(&head, 4343100);
-    insert(&head, 0);
-    insert(&head, 300);
-    insert(&head, 400);
-    insert(&head, 500);
-    insert(&head, 600);
-    insert(&head, 1700);
-    insert(&head, 800);
-    insert(&head, 900);
-    insert(&head, 1000);
-    insert(&head, 1100);
-    insert(&head, 1200);
+    insertAfter(head->next->next->next, 100);
     insert(&head, 1300);
 
-    
-    search(head, 1300);
+    printNode(head);
 
+    search(head, 1300);
 
     display(head);
 
