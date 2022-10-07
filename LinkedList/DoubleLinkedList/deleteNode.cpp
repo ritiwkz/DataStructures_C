@@ -4,13 +4,13 @@ Algorithm:
 Let the node to be deleted be del.
 If node to be deleted is head node, then change the head pointer to next current head.
 if headnode == del then
-      headnode =  del.nextNode
+	  headnode =  del.nextNode
 Set prev of next to del, if next to del exists.
-if del.nextNode != none 
-      del.nextNode.previousNode = del.previousNode 
+if del.nextNode != none
+	  del.nextNode.previousNode = del.previousNode
 Set next of previous to del, if previous to del exists.
-if del.previousNode != none 
-      del.previousNode.nextNode = del.next
+if del.previousNode != none
+	  del.previousNode.nextNode = del.next
 */
 
 // C++ program to delete a node from
@@ -21,16 +21,16 @@ using namespace std;
 /* a node of the doubly linked list */
 class Node
 {
-	public:
+public:
 	int data;
-	Node* next;
-	Node* prev;
+	Node *next;
+	Node *prev;
 };
 
 /* Function to delete a node in a Doubly Linked List.
 head_ref --> pointer to head node pointer.
 del --> pointer to node to be deleted. */
-void deleteNode(Node** head_ref, Node* del)
+void deleteNode(Node **head_ref, Node *del)
 {
 	/* base case */
 	if (*head_ref == NULL || del == NULL)
@@ -58,10 +58,10 @@ void deleteNode(Node** head_ref, Node* del)
 /* UTILITY FUNCTIONS */
 /* Function to insert a node at the
 beginning of the Doubly Linked List */
-void push(Node** head_ref, int new_data)
+void push(Node **head_ref, int new_data)
 {
 	/* allocate node */
-	Node* new_node = new Node();
+	Node *new_node = new Node();
 
 	/* put in the data */
 	new_node->data = new_data;
@@ -83,7 +83,7 @@ void push(Node** head_ref, int new_data)
 
 /* Function to print nodes in a given doubly linked list
 This function is same as printList() of singly linked list */
-void printList(Node* node)
+void printList(Node *node)
 {
 	while (node != NULL)
 	{
@@ -96,7 +96,7 @@ void printList(Node* node)
 int main()
 {
 	/* Start with the empty list */
-	Node* head = NULL;
+	Node *head = NULL;
 
 	/* Let us create the doubly linked list 10<->8<->4<->2 */
 	push(&head, 2);
@@ -108,7 +108,7 @@ int main()
 	printList(head);
 
 	/* delete nodes from the doubly linked list */
-	deleteNode(&head, head); /*delete first node*/
+	deleteNode(&head, head);	   /*delete first node*/
 	deleteNode(&head, head->next); /*delete middle node*/
 	deleteNode(&head, head->next); /*delete last node*/
 
