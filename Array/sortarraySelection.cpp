@@ -99,5 +99,11 @@ int main()
    selectionSort(arr, n);
    cout << "\nSorted array: ";
    printArray(arr, n);
+   // Remove the below comment for seeing the return of Sizeof()
+   /*
+   cout<<endl;
+   cout<<sizeof(arr)<<endl;
+   cout<<sizeof(arr[0])<<endl;
+   */
    return 0;
 }
