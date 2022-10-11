@@ -2,7 +2,6 @@
 // iterators in vector
 #include <iostream>
 #include <vector>
-
 using namespace std;
 
 int main()
@@ -27,6 +26,7 @@ int main()
 	cout << "\nOutput of crbegin and crend : ";
 	for (auto ir = g1.crbegin(); ir != g1.crend(); ++ir)
 		cout << *ir << " ";
+	cout<<endl;
 
 	return 0;
 }
