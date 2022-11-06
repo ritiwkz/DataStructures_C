@@ -4,7 +4,7 @@
     collection of nodes such that each node of the tree stores a value and a
     list of references to other nodes (the “children”).
 */
-
+/* Code is contributed by GeekforGeek */
 // C++ program to demonstrate some of the above
 // terminologies
 #include <bits/stdc++.h>
