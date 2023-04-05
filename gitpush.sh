@@ -1,3 +1,1 @@
-git add .
-git commit -m "$1"
-git push
+removing this code in order to memorise how to push code via Git to GitHub
