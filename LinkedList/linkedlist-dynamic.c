@@ -46,7 +46,7 @@ void search(N *head, int val)
     {
         if(head->data == val)
         {
-            printf("Element found at %d index\n",count);
+            printf("\nElement found at %d index\n",count);
             return;
         }
         head = head->next;
@@ -92,9 +92,11 @@ int main()
     insert(&head, 80);
     insert(&head, 90);
     insert(&head, 100);
-    search(head, 900);
+    
 
     printList(head);
+
+    search(head, 90);
 
     return 0;
     
